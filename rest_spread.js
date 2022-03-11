@@ -30,17 +30,19 @@
 //  console.log(sum(1,2,3))
 //  console.log(sum(11,22,33,44))
 
-arr = [3,4,2,1,4,3,5]
-arr1 = [1,2,3,59]
+// arr = [3,4,2,1,4,3,5]
+// arr1 = [1,2,3,59]
 
-arr3 = [...arr, ...arr1, 111,222]
+// arr3 = [...arr, ...arr1, 111,222]
 
-console.log(Math.max(...arr,...arr1))
+// console.log(Math.max(...arr,...arr1))
 
-let name = "John"
-console.log(...name)
+// let name = "John"
+// console.log(...name)
 
-a = 45;
-b = 99;
-[a,b] = [b,a]
-console.log(`a:${a} b:${b}`)
+// a = 45;
+// b = 99;
+// [a,b] = [b,a]
+// console.log(`a:${a} b:${b}`)
+
+
