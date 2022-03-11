@@ -33,7 +33,12 @@ let dragon = {
 
 let lizard = {
     name : "Kiki",
+    fire : true,
     fight(){
         return  1
     }
 }
+
+//we come borrow the sing fn for lizard using bind
+const singLizard = dragon.sing.bind(lizard)
+console.log(singLizard())

@@ -29,7 +29,11 @@ var dragon = {
 };
 var lizard = {
   name: "Kiki",
+  fire: true,
   fight: function fight() {
     return 1;
   }
-};
+}; //we come borrow the sing fn for lizard using bind
+
+var singLizard = dragon.sing.bind(lizard);
+console.log(singLizard());
