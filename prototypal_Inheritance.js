@@ -33,12 +33,22 @@ let dragon = {
 
 let lizard = {
     name : "Kiki",
-    fire : true,
+    // fire : true,
     fight(){
         return  1
     }
 }
 
 //we come borrow the sing fn for lizard using bind
-const singLizard = dragon.sing.bind(lizard)
-console.log(singLizard())
+// const singLizard = dragon.sing.bind(lizard)
+// console.log(singLizard())
+
+//lizard should inherit all the props and methods from dragon
+//prototype - fn obs
+//__proto__  - objects
+
+lizard.__proto__ = dragon
+console.log(lizard.sing())
+//wht about fire
+console.log(lizard.fire)
+console.log(lizard.fight())
