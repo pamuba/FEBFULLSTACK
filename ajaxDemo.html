@@ -9,31 +9,33 @@
 <body>
     <script>
         const promise = new Promise((resolve, reject)=>{
-            //XMLHttpRequest in an Browser implementation
-            const request = new XMLHttpRequest();
-
-            request.open('GET', 'http://dummy.restapiexample.com/api/v1/employees');
-            request.onload = () => {
-                if(request.status === 200){ 
-                    resolve(request.response)// we got the data, so resolve the Promise
+               
+                //XMLHttpRequest in an Browser implementation
+                const request = new XMLHttpRequest();
+                request.open('GET', 'https://jsonplaceholder.typicode.com/user');
+                request.onload = () => {
+                    if(request.status === 200){ 
+                        resolve(request.response)// we got the data, so resolve the Promise
+                    }
+                    else{
+                        reject(Error(request.statusText))//status is not 200 OK, so reject
+                    }
                 }
-                else{
-                    reject(Error(request.statusText))//status is not 200 OK, so reject
-                }
-            }
-
-            request.send();
+                request.send();
         });
 
         console.log("Async request made");
 
-        promise.then((data)=>{
-            document.write(data)
-        }),
-        (error)=>{
+        promise.then(
+            (data)=>{
+            document.write(data)}
+            ,
+            (error)=>{
             console.log("Promise rejected")
             console.log(error.message)
-        }
+            }
+        )
+        
     </script>
 </body>
 </html>
