@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const promise = new Promise((resolve, reject)=>{
+            //XMLHttpRequest in an Browser implementation
+            const request = new XMLHttpRequest();
+
+            request.open('GET', 'http://dummy.restapiexample.com/api/v1/employees');
+            request.onload = () => {
+                if(request.status === 200){ 
+                    resolve(request.response)// we got the data, so resolve the Promise
+                }
+                else{
+                    reject(Error(request.statusText))//status is not 200 OK, so reject
+                }
+            }
+
+            request.send();
+        });
+
+        console.log("Async request made");
+
+        promise.then((data)=>{
+            document.write(data)
+        }),
+        (error)=>{
+            console.log("Promise rejected")
+            console.log(error.message)
+        }
+    </script>
+</body>
+</html>
