@@ -21,6 +21,9 @@
                         reject(Error(request.statusText))//status is not 200 OK, so reject
                     }
                 }
+                request.onerror = (err) => {
+                    console.log("Hide it")
+                }
                 request.send();
         });
 
