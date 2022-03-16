@@ -5,15 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.js"></script>
-    <script src="first.js"></script>
+    <script src="ng-srcDemo.js"></script>
     <title>Document</title>
 </head>
-<body>
-    <div ng-controller="myController">
-        {{message}}
+<body ng-controller="myController">
+    <div>
+        Name: {{country.name}}
     </div>
-    <div ng-controller="myController1">
-        {{message}}
+    <div>
+        Capital: {{country.capital}}
+    </div>
+    <div>
+        <img ng-src="{{country.flag}}" alt="country flag" style="height:100px;width:200px">
     </div>
 </body>
 </html>
