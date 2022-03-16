@@ -28,5 +28,7 @@ myApp.controller("myController", function ($scope) {
     gender: "Male",
     salary: 60000
   }];
-  $scope.employees = employees;
+  $scope.employees = employees; // $scope.name = "John"
+
+  $scope.rowCount = 3;
 });

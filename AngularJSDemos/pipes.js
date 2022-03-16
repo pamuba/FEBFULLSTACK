@@ -24,7 +24,9 @@ myApp.controller("myController", function($scope){
         }
     ];
     $scope.employees = employees
+    // $scope.name = "John"
 
+    $scope.rowCount = 3
 });
 
 

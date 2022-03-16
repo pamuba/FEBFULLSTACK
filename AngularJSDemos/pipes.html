@@ -15,6 +15,7 @@
     </style>
 </head>
 <body ng-controller="myController" class="container">
+    Rows to display:<input type="number" step="1" max="5" min="0" ng-model="rowCount">
     <table class="table">
         <thead>
             <tr>
@@ -26,7 +27,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="emp in employees">
+            <tr ng-repeat="emp in employees | limitTo:rowCount">
                 <td>{{emp.name | uppercase}}</td>
                 <td>{{emp.dateOfBirth | date:"dd/MMMM/yyyy"}}</td>
                 <td>{{emp.gender}}</td>
@@ -36,5 +37,14 @@
         </tbody>
     </table>
 </body>
+
+<!-- 
+1 way databinding(model->view) = {{}}
+2 way databinding(model->view view->model) = ng-model 
+-->
+
+<input type="text" ng-model="name"/>
+{{name}}
+
 </html>
  
