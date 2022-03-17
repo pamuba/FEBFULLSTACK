@@ -2,7 +2,7 @@
 
 var app = angular.module("app", []);
 app.controller("msg", ['$scope', function ($scope) {}]);
-app.directive('message', function () {
+app.directive('message', function ($interpolate) {
   return {
     compile: function compile(tElement, tAttributes) {
       console.log(tAttributes.text + " In Compile phase");
@@ -25,10 +25,11 @@ app.directive('message', function () {
       };
     },
     controller: function controller($scope, $element, $attrs) {
-      console.log($attrs.text + " In Controller phase"); //any event handling related to the scope, then it should be provided through the controller
+      var v = $interpolate($attrs.text)($scope);
+      console.log(v + " In Controller phase"); //any event handling related to the scope, then it should be provided through the controller
 
       $scope.btnClick = function () {
-        alert();
+        alert(v);
       };
     }
   };
