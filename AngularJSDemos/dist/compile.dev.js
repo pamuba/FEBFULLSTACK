@@ -5,18 +5,18 @@ app.controller("msg", ['$scope', function ($scope) {}]);
 app.directive('message', function () {
   return {
     compile: function compile(tElement, tAttributes) {
-      console.log(tAttributes.text + "In Compile phase");
+      console.log(tAttributes.text + " In Compile phase");
       return {
         pre: function pre(scope, ielement, iattributes) {
-          console.log(iattributes.text + "In Pre phase");
+          console.log(iattributes.text + " In Pre phase");
         },
         post: function post(scope, ielement, iattributes) {
-          console.log(iattributes.text + "In Post phase");
+          console.log(iattributes.text + " In Post phase");
         }
       };
     },
-    controller: function controller($scope, $element, $attributes) {
-      console.log($attributes.text + "In Controller phase");
+    controller: function controller($scope, $element, $attrs) {
+      console.log($attrs.text + " In Controller phase");
     }
   };
 });
