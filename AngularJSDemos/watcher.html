@@ -14,9 +14,15 @@
    <!-- a = <input type="text" ng-model="a" ng-change="updateC()"><br> -->
    <!-- a = <input type="text" ng-model="a"><br> -->
    <!-- b = {{b}} -->
-   a = <input type="text" ng-model="o.a"><br>
+   <!-- a = <input type="text" ng-model="o.a"><br>
    b = <input type="text" ng-model="o.b"><br>
-   c = {{o.c}}
+   c = {{o.c}} -->
+
+   <div ng-repeat="o in emps">
+       <div>{{o.empno}} - {{o.ename}}</div>
+   </div>
+   <button ng-click="addEmp()">Add</button>
+   <button ng-click="modify3rdEmp()">Modify 3rd Emp</button>
 </body>
 </html>
  
