@@ -59,7 +59,7 @@ myApp.controller("myController", function ($scope) {
   }];
 
   $scope.addEmp = function () {
-    var newEmpno = 100 + $scope.emps.lenght + 1;
+    var newEmpno = 100 + $scope.emps.length + 1;
     var newName = "ename" + newEmpno;
     $scope.emps.push({
       empno: newEmpno,
@@ -69,5 +69,17 @@ myApp.controller("myController", function ($scope) {
 
   $scope.modify3rdEmp = function () {
     $scope.emps[2].ename = "Test";
-  };
+  }; //reference watcher
+  // $scope.$watch('emps', function(newVal, oldVal){
+  //     console.log("No. of Employees:"+ $scope.emps.length)
+  // })
+  //equility watcher detects both
+  // $scope.$watch('emps', function(newVal, oldVal){
+  //     console.log("No. of Employees:"+ $scope.emps.length)
+  // }, true)
+  //detects addtion not modification
+  // $scope.$watchCollection('emps', function(newVal, oldVal){
+  //     console.log("No. of Employees:"+ $scope.emps.length)
+  // })
+
 });
