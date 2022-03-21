@@ -2,21 +2,24 @@
 
 var myApp = angular.module("myModule", []);
 myApp.controller("myController", function ($scope) {
-  $scope.a = 10;
-  $scope.b = 20;
-  $scope.c = 30;
-  $scope.d = 40; // $scope.updateC = function(){
-  //     $scope.c = $scope.a * $scope.b
-  // }
-  //manual watcher for c
-
-  $scope.$watch("c", function (newVal, oldVal) {
-    if (newVal != oldVal) console.log("Updated C to " + newVal);
-  });
-  $scope.$watchGroup(["a", "b"], function (newVal, oldVal) {
-    console.log(oldVal + " " + newVal);
-    if (newVal != oldVal) $scope.c = $scope.b * $scope.a;
-  }); //     $scope.$watch("a", function(newVal, oldVal){
+  // $scope.a = 10
+  // $scope.b = 20
+  // $scope.c = 30
+  // $scope.d = 40
+  // // $scope.updateC = function(){
+  // //     $scope.c = $scope.a * $scope.b
+  // // }
+  // //manual watcher for c
+  // $scope.$watch("c", function(newVal, oldVal){
+  //     if(newVal != oldVal)
+  //         console.log("Updated C to "+ newVal)
+  // });
+  // $scope.$watchGroup(["a","b"], function(newVal, oldVal){
+  //     console.log(oldVal+" "+newVal)
+  //     if(newVal != oldVal)
+  //          $scope.c = $scope.b * $scope.a
+  // });
+  //     $scope.$watch("a", function(newVal, oldVal){
   //         if(newVal != oldVal)
   //             $scope.c = $scope.b * 2
   //     })
@@ -24,4 +27,18 @@ myApp.controller("myController", function ($scope) {
   //         if(newVal != oldVal)
   //             $scope.b = $scope.a * 2
   // });
+  $scope.o = {
+    a: 1,
+    b: 2,
+    c: 3
+  }; //reference watcher
+  // $scope.$watch("o", function(newVal, oldVal){
+  //     if(newVal != oldVal)
+  //         $scope.o.c = $scope.o.a * $scope.o.a
+  // });
+  //equility watcher
+
+  $scope.$watch("o", function (newVal, oldVal) {
+    if (newVal != oldVal) $scope.o.c = $scope.o.a * $scope.o.b;
+  }, true);
 });
