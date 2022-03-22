@@ -3,7 +3,7 @@ var myApp = angular.module("myModule",[])
 myApp.controller("myController", function($scope, $rootScope){
     $scope.a = 10
     $scope.b = 20
-
+    $scope.s = 0
     $scope.calcSum = function(){
         $scope.s = Number($scope.a) + Number($scope.b)
     }
@@ -34,6 +34,7 @@ myApp.controller("myController", function($scope, $rootScope){
 })
 
 var btnClick = function(){
+    var $scope = angular.element($('#div1')).scope();
     $scope.s = Number($scope.a) + Number($scope.b)
 }
 
