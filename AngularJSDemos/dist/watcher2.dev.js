@@ -32,6 +32,10 @@ myApp.controller("myController", function ($scope, $rootScope) {
 });
 
 var btnClick = function btnClick() {
-  var $scope = angular.element($('#div1')).scope();
-  $scope.s = Number($scope.a) + Number($scope.b);
+  var $scope = angular.element($('#div1')).scope(); // $scope.s = Number($scope.a) + Number($scope.b)
+  // $scope.$apply()
+
+  $scope.$apply(function () {
+    $scope.s = Number($scope.a) + Number($scope.b);
+  });
 };
