@@ -18,3 +18,12 @@ myApp.controller('sumurl', ['$scope', '$routeParams', function ($scope, $routePa
   $scope.a = $routeParams.a;
   $scope.b = $routeParams.b;
 }]);
+myApp.controller('suminput', ['$scope', '$location', '$interpolate', function ($scope, $location, $interpolate) {
+  $scope.a = 0;
+  $scope.b = 0;
+
+  $scope.doSum = function () {
+    var url = $interpolate('/sumurl/{{a}}/{{b}}')($scope);
+    $location.path(url);
+  };
+}]);
