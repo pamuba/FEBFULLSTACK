@@ -8,3 +8,10 @@ const fs = require('fs')
 
 // server.listen(3000)
 
+http.
+     createServer(function(req, res){
+         if(req.url === '/'){
+             fs.createReadStream(__dirname+"/index.html")
+               .pipe(res)
+         }
+}).listen(3000)
