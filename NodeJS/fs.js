@@ -52,4 +52,16 @@ let fs = require('fs')
 //     }
 // })
 
+//deleting a folder
+// fs.rmdir('folder', (err)=>{
+//     if(err != null){
+//         console.log(err.message)
+//     }
+//     else{
+//         console.log("Folder Deleted Successfully")
+//     }
+// })
+
+
+//WAP to delete a non empty folder
 
