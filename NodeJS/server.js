@@ -14,4 +14,20 @@ http.
              fs.createReadStream(__dirname+"/index.html")
                .pipe(res)
          }
+         else if(req.url === '/flag'){
+             fs.readFile(__dirname+'/images/flag.png', function(err, data){
+                 if(err)
+                 {
+                     console.log(err.message)
+                 }
+                 else{
+                     res.writeHead(200, {'Content-Type':'text/html'})
+                     res.write('<div>')
+                     res.write('<img style="height:200px; width:400px" src="data:image/png;base64,')
+                     res.write(Buffer.from(data).toString('base64'))
+                     res.write('"/></div>')
+                     res.end()
+                 }
+             })
+         }
 }).listen(3000)
