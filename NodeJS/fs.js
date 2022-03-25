@@ -31,7 +31,25 @@ let fs = require('fs')
 //     }
 // })
 
+//deleting a file
+// fs.unlink('writeMe.txt', (err)=>{
+//     if(err != null){
+//         console.log(err.message)
+//     }
+//     else{
+//         console.log("File Deleted Successfully")
+//     }
+// })
 
 
+//creating a folder
+// fs.mkdir('folder', (err)=>{
+//     if(err != null){
+//         console.log(err.message)
+//     }
+//     else{
+//         console.log("Folder Created Successfully")
+//     }
+// })
 
 
