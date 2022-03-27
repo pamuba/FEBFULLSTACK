@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+        line-height: 0;
+        }
+
+        div {
+        display:inline-block;
+        padding: 5px;
+
+        background: #fff;
+        border: 1px solid #aaa;
+        cursor: pointer;
+        }
+
+        div:hover {
+        border: 1px solid #faa;
+        background: #fdd;
+        }
+    </style>
+    
+</head>
+<body>
+    <div>1
+        <div>2
+          <div>3
+            <div>4
+              <div>5</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button onclick="document.getElementById('log').innerHTML = '<p>No logs</p>';">Clear logs</button>
+      <section id="log"></section>
+
+      <script>
+        
+        var logElement = document.getElementById('log');
+
+        function log(msg) {
+            if (logElement.innerHTML == "<p>No logs</p>")
+                logElement.innerHTML = "";
+            logElement.innerHTML += ('<p>' + msg + '</p>');
+        }
+
+        function humanizeEvent(eventPhase){
+            switch(eventPhase){
+                case 1: //Event.CAPTURING_PHASE
+                return "Event is being propagated through the target's ancestor objects";
+                case 2: //Event.AT_TARGET
+                return "The event has arrived at the event's target";
+                case 3: //Event.BUBBLING_PHASE
+                return "The event is propagating back up through the target's ancestors in reverse order";
+            }
+        }
+        function capture(e) {
+            log('capture: ' + this.firstChild.nodeValue.trim() + "; " + 
+            humanizeEvent(e.eventPhase));
+            console.log("Captrue")
+        }
+
+        function bubble(e) {
+            log('bubble: ' + this.firstChild.nodeValue.trim() + "; " + 
+            humanizeEvent(e.eventPhase));
+            console.log("Bubble")
+        }
+
+        try{
+            let divs = document.getElementsByTagName('div');
+
+            for (let i = 0; i < divs.length; i++) {
+                console.log(divs.length)
+                divs[i].addEventListener('click', capture, true);
+                divs[i].addEventListener('click', bubble, false);
+            }
+        }
+        catch(err){
+            console.log(err.message)
+        }
+        
+    </script>
+</body>
+</html>
