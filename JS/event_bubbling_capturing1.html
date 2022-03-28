@@ -76,8 +76,8 @@
 
             for (let i = 0; i < divs.length; i++) {
                 console.log(divs.length)
-                divs[i].addEventListener('click', capture, true);
-                divs[i].addEventListener('click', bubble, false);
+                divs[i].addEventListener('click', capture, true); //capture enabled
+                divs[i].addEventListener('click', bubble, false); //bubbling enabled
             }
         }
         catch(err){
