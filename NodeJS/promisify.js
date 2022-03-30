@@ -37,15 +37,15 @@ const read = util.promisify(fs.readFile)
 //     console.log(data3.toString())
 // })
 
-var run = async () => {
-    const [data1, data2, data3] = await Promise.all([
-        read('readMe.txt'),
-        read("data.txt"),
-        read("data1.txt")
-    ]);
-    console.log(data1.toString())
-    console.log(data2.toString())
-    console.log(data3.toString())
-}
+// var run = async () => {
+//     const [data1, data2, data3] = await Promise.all([
+//         read('readMe.txt'),
+//         read("data.txt"),
+//         read("data1.txt")
+//     ]);
+//     console.log(data1.toString())
+//     console.log(data2.toString())
+//     console.log(data3.toString())
+// }
 
-run()
+// run()

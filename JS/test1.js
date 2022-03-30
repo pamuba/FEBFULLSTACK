@@ -4,6 +4,10 @@ let calc1 = (x, y) => {
   return (x * y) + calc2 (x) 
 }
 
+
+//prototype
+//__proto__
+
 // console.log(calc1(2,3))
 
 // let values = [2,3]; 
