@@ -77,3 +77,17 @@ let sass = require('gulp-sass')
 
 //////////////////////////////////////////////////////////////////////////
 
+//sass compile + minify + rename
+const styleSRC = './src/scss/style.scss'
+const styleDEST = './dist/css'
+
+gulp.task('styles', function(done){
+    gulp.src(styleSRC)
+        .pipe(sass({
+            outputStyle:'compressed'
+        }))
+        .pipe(cleanCSS())
+        .pipe(rename({suffix:'.min'}))
+        .pipe(gulp.dest(styleDEST))
+    done()
+});
