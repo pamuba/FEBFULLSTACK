@@ -4,6 +4,8 @@ let cleanCSS = require('gulp-clean-css')
 let rename = require('gulp-rename')
 //sass compiler that gulp-sass uses
 let sass = require('gulp-sass')(require('sass'))
+let autoprefixer = require('gulp-autoprefixer')
+let sourcemaps = require('gulp-sourcemaps')
 
 //gulp --tasks lists all tasks
 //gulp task-name to run a task
@@ -78,17 +80,39 @@ let sass = require('gulp-sass')(require('sass'))
 
 //////////////////////////////////////////////////////////////////////////
 
-//sass compile + minify + rename
+// //sass compile + minify + rename
+// const styleSRC = './src/scss/style.scss'
+// const styleDEST = './dist/css'
+
+// gulp.task('styles', function(done){
+//     gulp.src(styleSRC)
+//         .pipe(sass({
+//             outputStyle:'compressed'
+//         }))
+//         .pipe(cleanCSS())
+//         .pipe(rename({suffix:'.min'}))
+//         .pipe(gulp.dest(styleDEST));
+//     done()
+// });
+////////////////////////////////////////////////////
+
+//sass compile + minify + rename + autoprefixer + sourcemaps
 const styleSRC = './src/scss/style.scss'
 const styleDEST = './dist/css'
 
 gulp.task('styles', function(done){
     gulp.src(styleSRC)
+        .pipe(sourcemaps.init())
         .pipe(sass({
             outputStyle:'compressed'
         }))
+        .on('error', console.error.bind(console))
+        .pipe(autoprefixer({
+            cascade:false
+        }))
         .pipe(cleanCSS())
         .pipe(rename({suffix:'.min'}))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(styleDEST));
     done()
 });

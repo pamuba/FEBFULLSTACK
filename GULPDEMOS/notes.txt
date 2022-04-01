@@ -12,3 +12,7 @@ gulp-clean-css
 sass compile + minify + rename
 gulp-sass
 sass
+
+sass compile +  minify + rename + autoprifixer + sourcemaps
+gulp-sourcemaps(3.0.0)
+gulp-autoprefixer(7.0.1)
