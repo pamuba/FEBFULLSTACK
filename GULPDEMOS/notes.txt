@@ -16,3 +16,8 @@ sass
 sass compile +  minify + rename + autoprifixer + sourcemaps
 gulp-sourcemaps(3.0.0)
 gulp-autoprefixer(7.0.1)
+
+
+image minification
+gulp-imagemin
+

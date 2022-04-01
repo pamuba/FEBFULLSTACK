@@ -6,6 +6,9 @@ let rename = require('gulp-rename')
 let sass = require('gulp-sass')(require('sass'))
 let autoprefixer = require('gulp-autoprefixer')
 let sourcemaps = require('gulp-sourcemaps')
+let imagemin = require('gulp-imagemin')
+
+// import imagemin from 'gulp-imagemin'
 
 //gulp --tasks lists all tasks
 //gulp task-name to run a task
@@ -97,22 +100,36 @@ let sourcemaps = require('gulp-sourcemaps')
 ////////////////////////////////////////////////////
 
 //sass compile + minify + rename + autoprefixer + sourcemaps
-const styleSRC = './src/scss/style.scss'
-const styleDEST = './dist/css'
+// const styleSRC = './src/scss/style.scss'
+// const styleDEST = './dist/css'
 
-gulp.task('styles', function(done){
-    gulp.src(styleSRC)
-        .pipe(sourcemaps.init())
-        .pipe(sass({
-            outputStyle:'compressed'
-        }))
-        .on('error', console.error.bind(console))
-        .pipe(autoprefixer({
-            cascade:false
-        }))
-        .pipe(cleanCSS())
-        .pipe(rename({suffix:'.min'}))
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(styleDEST));
-    done()
-});
+// gulp.task('styles', function(done){
+//     gulp.src(styleSRC)
+//         .pipe(sourcemaps.init())
+//         .pipe(sass({
+//             outputStyle:'compressed'
+//         }))
+//         .on('error', console.error.bind(console))
+//         .pipe(autoprefixer({
+//             cascade:false
+//         }))
+//         .pipe(cleanCSS())
+//         .pipe(rename({suffix:'.min'}))
+//         .pipe(sourcemaps.write('./'))
+//         .pipe(gulp.dest(styleDEST));
+//     done()
+// });
+////////////////////////////////////////////////////////////
+// let imgSrc = "./src/images/*"
+// let imgDEST = './dist/images'
+
+// gulp.task('image', function(done){
+//     gulp.src(imgSrc)
+//         .pipe(imagemin())
+//         .pipe(gulp.dest(imgDEST))
+//     done()
+// })
+
+///////////////////////////////////////////////////////////
+//browserify
+
