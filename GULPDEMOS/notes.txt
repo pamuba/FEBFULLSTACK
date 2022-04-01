@@ -21,3 +21,14 @@ gulp-autoprefixer(7.0.1)
 image minification
 gulp-imagemin
 
+js => minify + rename + autoprifixer + sourcemaps
+babel-core@6.26.3
+babel-preset-env@1.7.0
+babelify@8.0.0
+browserify@17.0.0
+gulp-uglify@3.0.2
+vinyl-buffer@1.0.1
+vinyl-source-stream@2.0.0
+
+
+

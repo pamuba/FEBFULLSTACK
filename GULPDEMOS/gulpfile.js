@@ -8,6 +8,12 @@ let autoprefixer = require('gulp-autoprefixer')
 let sourcemaps = require('gulp-sourcemaps')
 let imagemin = require('gulp-imagemin')
 
+let browserify = require('browserify')
+let babelify = require('babelify')
+let source = require('vinyl-source-stream')
+let buffer = require('vinyl-buffer')
+let uglify = require('gulp-uglify')
+
 // import imagemin from 'gulp-imagemin'
 
 //gulp --tasks lists all tasks
@@ -132,4 +138,38 @@ let imagemin = require('gulp-imagemin')
 
 ///////////////////////////////////////////////////////////
 //browserify
+//babelify
+//bundle
+//source
+//rename
+//buffer
+//init sourcemaps
+//uglify
+//write sourcemaps
+//dist
+
+let jsSRC = 'script.js'
+let jsFolder = './src/js/'
+let jsDEST = './dist/js/'
+
+let jsFiles = [jsSRC]
+
+gulp.task('js', function(done){
+    jsFiles.map(function(entry){
+        return browserify({
+            entries:[jsFolder+entry]
+        })
+        .transform(babelify, {presets:['env']})
+        .bundle()
+        .pipe(source(entry))
+        .pipe(rename({extname:'.min.js'}))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps:true}))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(jsDEST))
+    });
+    done()
+})
+
 
