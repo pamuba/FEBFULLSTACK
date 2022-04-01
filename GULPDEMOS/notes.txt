@@ -2,3 +2,13 @@
 2. gulp-jshint (jshint)
 3. before running the tasks install gulp globally(for OS)
 npm i gulp -g
+
+
+minify + rename css files
+gulp-rename
+gulp-clean-css
+
+
+sass compile + minify + rename
+gulp-sass
+sass

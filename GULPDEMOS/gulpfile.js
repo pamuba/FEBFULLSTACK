@@ -2,7 +2,8 @@ let gulp = require('gulp')
 let jshint = require('gulp-jshint')
 let cleanCSS = require('gulp-clean-css')
 let rename = require('gulp-rename')
-let sass = require('gulp-sass')
+//sass compiler that gulp-sass uses
+let sass = require('gulp-sass')(require('sass'))
 
 //gulp --tasks lists all tasks
 //gulp task-name to run a task
@@ -88,6 +89,6 @@ gulp.task('styles', function(done){
         }))
         .pipe(cleanCSS())
         .pipe(rename({suffix:'.min'}))
-        .pipe(gulp.dest(styleDEST))
+        .pipe(gulp.dest(styleDEST));
     done()
 });
