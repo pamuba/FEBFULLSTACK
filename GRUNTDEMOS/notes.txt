@@ -5,6 +5,12 @@ npm init -y
 3. create the grunt file
 4. install plugins
 
+npm i grunt-contrib-concat
+npm i grunt-contrib-uglify
+npm i grunt-contrib-cssmin
+npm i grunt-sass
+//grunt-sass has a dependency
+npm i node-sass
 
 Configuring the grunt file
 -create the tasks
