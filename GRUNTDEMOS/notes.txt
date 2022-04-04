@@ -1,0 +1,13 @@
+Setting up GRUNT
+1. npm i grunt-cli -globally
+npm init -y
+2. npm i grunt -D(dev dependency)
+3. create the grunt file
+4. install plugins
+
+
+Configuring the grunt file
+-create the tasks
+-load the plugins(npm packages)
+-register the tasks to run
+
