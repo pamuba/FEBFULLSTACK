@@ -106,25 +106,25 @@ let uglify = require('gulp-uglify')
 ////////////////////////////////////////////////////
 
 //sass compile + minify + rename + autoprefixer + sourcemaps
-// const styleSRC = './src/scss/style.scss'
-// const styleDEST = './dist/css'
+const styleSRC = './src/scss/style.scss'
+const styleDEST = './dist/css'
 
-// gulp.task('styles', function(done){
-//     gulp.src(styleSRC)
-//         .pipe(sourcemaps.init())
-//         .pipe(sass({
-//             outputStyle:'compressed'
-//         }))
-//         .on('error', console.error.bind(console))
-//         .pipe(autoprefixer({
-//             cascade:false
-//         }))
-//         .pipe(cleanCSS())
-//         .pipe(rename({suffix:'.min'}))
-//         .pipe(sourcemaps.write('./'))
-//         .pipe(gulp.dest(styleDEST));
-//     done()
-// });
+gulp.task('styles', function(done){
+    gulp.src(styleSRC)
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle:'compressed'
+        }))
+        .on('error', console.error.bind(console))
+        .pipe(autoprefixer({
+            cascade:false
+        }))
+        .pipe(cleanCSS())
+        .pipe(rename({suffix:'.min'}))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(styleDEST));
+    done()
+});
 ////////////////////////////////////////////////////////////
 // let imgSrc = "./src/images/*"
 // let imgDEST = './dist/images'
@@ -170,6 +170,17 @@ gulp.task('js', function(done){
         .pipe(gulp.dest(jsDEST))
     });
     done()
+})
+
+
+////////////////////////////////watch mode/////////////////////////
+let styleWatch = '/.src/scss/**/*.scss'
+let jsWatch = './src/js/**/*.js'
+
+
+gulp.task('watch', function(){
+    gulp.watch(styleWatch, gulp.parallel('styles'))
+    gulp.watch(jsWatch, gulp.parallel('js'))
 })
 
 
