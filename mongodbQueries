@@ -1,0 +1,309 @@
+//1. Database Operations
+//create a database
+use mydb
+
+//show the current database
+db
+
+//show all the databases
+show dbs
+
+//create a collection and insert a document
+db.Employees.insert({"name":"Max"})
+
+//drop a database
+db.dropDatabase()
+
+//2.Collections
+
+use mydb
+
+//create a collection
+db.createCollection("Students")
+db.Students.insert({"name":"Jill"})
+
+//show all the collections on a single database
+show collections
+
+//3. insert a document
+db.Employees.insert({"name":"Jack"})
+
+//drop a collection
+db.Students.drop()
+
+//Student data
+[
+{
+"StudentNo":"1"
+"FirstName":"Mark"
+"LastName":"Waugh"
+"Age":"10"
+},
+{
+"StudentNo":"2"
+"FirstName":"Mel"
+"LastName":"Gibson"
+"Age":"17"
+},
+{
+"StudentNo":"3"
+"FirstName":"Deno"z
+"LastName":"Socratus"
+"Age":"40"
+},
+{
+"StudentNo":"4"
+"FirstName":"Charles"
+"LastName":"Trippy"
+"Age":"12"
+},
+{
+"StudentNo":"5"
+"FirstName":"Shay"
+"LastName":"Watson"
+"Age":"15"
+},
+{
+"StudentNo":"6"
+"FirstName":"Katie"
+"LastName":"Ben"
+"Age":"13"
+},
+{
+"StudentNo":"7"
+"FirstName":"Julie"
+"LastName":"Cyrus"
+"Age":"15"
+},
+{
+"StudentNo":"8"
+"FirstName":"Denny"
+"LastName":"Denzopa"
+"Age":"16"
+},
+]
+
+
+use school
+
+db.students.insert(
+    [
+    
+        {
+            "StudentNo":"2",
+            "FirstName":"Mel",
+            "LastName":"Gibson",
+            "Age":"17"
+        },
+        {
+            "StudentNo":"3",
+            "FirstName":"Deno",
+            "LastName":"Socratus",
+            "Age":"40"
+        },
+        {
+            "StudentNo":"4",
+            "FirstName":"Charles",
+            "LastName":"Trippy",
+            "Age":"12"
+        },
+        {
+            "StudentNo":"5",
+            "FirstName":"Shay",
+            "LastName":"Watson",
+            "Age":"15"
+        },
+        {
+            "StudentNo":"6",
+            "FirstName":"Katie",
+            "LastName":"Ben",
+            "Age":"13"
+        },
+        {
+            "StudentNo":"7",
+            "FirstName":"Julie",
+            "LastName":"Cyrus",
+            "Age":"15"
+        },
+        {
+            "StudentNo":"8",
+            "FirstName":"Denny",
+            "LastName":"Denzopa",
+            "Age":"16"
+        }
+    ]
+)
+
+//4. Quering the data
+//Fetch all the documents in a collection
+
+db.students.find({})
+
+//find the first one
+db.students.findOne()
+
+//find based on a condition
+//eQUALS
+db.students.find(
+    {
+        "StudentNo":"2"
+     }
+)
+//GEATER THAN
+db.students.find(
+ {
+    "Age": {$gt:"15"}       
+  } 
+)
+  
+//GREWATER THEN EQUAL
+db.students.find(
+ {
+    "Age": {$gte:"15"}       
+  } 
+)
+  
+//less then
+db.students.find(
+ {
+    "Age": {$lt:"15"}       
+  } 
+)
+ //less then equal
+db.students.find(
+ {
+    "Age": {$lte:"15"}       
+  } 
+)
+//not equal
+db.students.find(
+ {
+    "Age": {$ne:"15"}       
+  } 
+)
+
+
+//5, Conditions
+//AND
+db.students.find(
+    {"FirstName":"Mark", "Age":"10"}
+)
+    
+//OR
+db.students.find(
+   {
+       $or : [{"FirstName":"Mark"}, {"Age":"15"}]
+   }
+)    
+//Combine and + or
+db.students.find(
+   {
+       "FirstName":"Mark", $or : [{"Age":"15"}, {"Age":"10"}]
+   }
+)
+
+//6. Updating
+db.students.update(
+    {"_id" : ObjectId("624f3424c568e2f25ad6b38a")},    
+    {$set : {"LastName":"Bill"}}   
+    )
+    
+    db.students.update(
+    {"Age" : "15"},    
+    {$set : {"LastName":"Segura"}} , 
+    {multi:true}
+    )
+    
+
+    db.students.save(
+        {   "_id" : ObjectId("624f3424c568e2f25ad6b39b"),
+            "StudentNo" : "14",
+            "FirstName" : "Marks",
+            "LastName" : "Bill",
+            "Age" : "99"
+        }
+        )
+
+
+//7. Delete
+db.students.remove(
+    {"_id": ObjectId("624f3424c568e2f25ad6b39b")}
+  )
+    
+  db.students.remove(
+   {
+     "Age": "15"
+    }, 1
+  )
+//8. Projection
+
+db.students.find({}, {"FirstName":1, "_id":0})
+
+//9. Sort Skip Limit
+db.students.find({}, {"StudentNo":1, "FirstName":1, "_id":0}).limit(4)
+
+db.students.find({}, {"StudentNo":1, "FirstName":1, "_id":0}).skip(2)
+
+db.students.find({}, {"StudentNo":1, "FirstName":1, "_id":0}).skip(2).limit(1)
+
+
+db.students.find({}, {"StudentNo":1, "FirstName":1, "_id":0}).sort({"FirstName":1})
+
+db.students.find({}, {"StudentNo":1, "FirstName":1, "_id":0}).sort({"FirstName":-1})
+
+//create an index
+db.posts.createIndex({"Student_id":-1})
+
+//drop index
+db.posts.dropIndex({"Student_id":-1})
+
+db.posts.dropIndex({"Student_id":-1, "name":-1})
+
+for(i=0;i<10000000; i++){db.posts.insert({"Student_id":i,name="Mark"})
+db.posts.find({"Student_id":{"$lt":3000000}}).sort({Student_id:-1})
+
+db.posts.getIndexes()
+
+//hashed Index
+//Geospatial Index
+//Test Index (works well with strings)
+
+//////////////////////////////////////////////////////////
+
+//validator
+
+db.createCollection( "people" , { 
+    validator: { $jsonSchema: { 
+       bsonType: "object", 
+       required: [ "name", "surname", "email" ], 
+       properties: { 
+          name: { 
+             bsonType: "string", 
+             description: "required and must be a string" }, 
+          surname: { 
+             bsonType: "string", 
+             description: "required and must be a string" }, 
+          email: { 
+             bsonType: "string", 
+             pattern: "^.+\@.+$", 
+             description: "required and must be a valid email address" }, 
+          year_of_birth: { 
+             bsonType: "int", 
+             minimum: 1900, 
+             maximum: 2018,
+             description: "the value must be in the range 1900-2018" }, 
+          gender: { 
+             enum: [ "M", "F" ], 
+             description: "can be only M or F" } 
+       }
+    }
+ }})
+ 
+ db.people.insert({name:"John", surname:"Smith", email:"john.smith@gmail.com"})
+ 
+ db.people.insert({name:"Jim", surname:"Smith", email:"jim.smith@gmail.com", year_of_birth:NumberInt(1960)})
+ 
+ db.people.insert({name:"Jim", surname:"Smith", email:"jim.smith@gmail.com", year_of_birth:NumberInt(1960), gender:"M"})
+ 
+ db.people.insert({name:"Jim", surname:"Smith", email:"jim.smith@gmail.com", year_of_birth:NumberInt(1960), gender:"M", hobbies:"js"})
+ 
