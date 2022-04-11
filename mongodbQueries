@@ -307,3 +307,5 @@ db.createCollection( "people" , {
  
  db.people.insert({name:"Jim", surname:"Smith", email:"jim.smith@gmail.com", year_of_birth:NumberInt(1960), gender:"M", hobbies:"js"})
  
+
+ 
