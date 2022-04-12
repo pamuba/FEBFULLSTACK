@@ -6,3 +6,5 @@ Setup -> creates all the objects the test needs
 10 it blocks
 
 Teardown -> garbage collects/destroys all the objects used in a test
+
+spies - for test isolation

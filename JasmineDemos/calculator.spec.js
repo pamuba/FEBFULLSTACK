@@ -1,7 +1,7 @@
 //test suite -> many tests ->test suite
 //test suite is a collection of related tests
 
-describe('calculator.js', function(){
+xdescribe('calculator.js', function(){
 
     let calculator;
     let calculator2;
