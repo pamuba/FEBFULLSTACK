@@ -1,0 +1,8 @@
+Setup -> creates all the objects the test needs
+
+1. beforeEach -> local objects for the test case
+2. beforeAll -> global objects for the test case
+
+10 it blocks
+
+Teardown -> garbage collects/destroys all the objects used in a test
