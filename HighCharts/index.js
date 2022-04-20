@@ -18,6 +18,15 @@ document.addEventListener("DOMContentLoaded",()=>{
             }
         },
         tooltip:{
+            formatter(){
+                // return `<strong>X value</strong> - ${this.x}. <strong>Y value</strong> - ${this.y}`
+                let s = `<strong>X value</strong> - ${this.x}`;
+                this.points.forEach(function(point){
+                    s += `<br>Y value - ${point.y}`
+                });
+                return s
+            },
+            shared: true,
             animation:true,
             backgroundColor:'#333333',
             borderColor:'#f01f11',
@@ -31,11 +40,14 @@ document.addEventListener("DOMContentLoaded",()=>{
             text:'Our First Chart'
         },
         yAxis:{
+           
             title:{
                 text:"Fruits Ea ten"
             }
         },
+        // colors:['#1c110a','#e4d6a7','#e9b44c'],
         xAxis:{
+            alternateGridColor:'#b7cff7',
             categories: ['Apples', 'Bananas', 'Oranges']
         },
         series:[
@@ -45,7 +57,8 @@ document.addEventListener("DOMContentLoaded",()=>{
             },
             {
                 name:'Jill',
-                data:[1,100,3,2,2,3,1,2,3]
+                negativeColor: 'red',
+                data:[1,100,-30,2,2,3,1,2,3]
             },
             {
                 name:'Jake',
