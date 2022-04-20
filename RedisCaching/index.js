@@ -63,3 +63,12 @@ app.listen(PORT, (err)=> {
         console.log(`App listening on PORT ${PORT}`)
     }
 })
+
+//1. Strings
+//2. Lists
+//3. Hashes
+//4. Sets
+//5. Sorted Sets
+//6. Geospatial
+//7. Bitmaps
+//8. Streams
