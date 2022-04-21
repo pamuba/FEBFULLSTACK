@@ -1,0 +1,11 @@
+CRUD methods
+Create - HTTP POST
+Read - HTTP GET
+Update - HTPP PUT
+Delete - HTTP DELETE
+
+unit - mocks
+
+integration 
+
+todo{title, done}

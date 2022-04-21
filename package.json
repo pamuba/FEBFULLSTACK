@@ -16,5 +16,11 @@
     "url": "https://github.com/pamuba/FEBFULLSTACK/issues"
   },
   "homepage": "https://github.com/pamuba/FEBFULLSTACK#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "mongoose": "^5.9.24"
+  },
+  "devDependencies": {
+    "node-mocks-http": "^1.11.0"
+  }
 }
