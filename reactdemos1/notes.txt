@@ -6,3 +6,26 @@ setState
 Event binding
 Controlled Components
 Pure Components
+
+
+Regular Comp:
+shouldComponetUpdate - not implemented, always returns true
+
+
+Pure Comp:
+shouldComponetUpdate -  implemented, SC of props and state and  return true/false
+
+primitive types:
+a = "hello"
+b = "hello"
+
+aSCb = true
+
+ref types:
+
+a : {name:"abc"}
+b : {name:"abc"}
+
+aSCb = false
+
+aSCa  / bSCb = true
