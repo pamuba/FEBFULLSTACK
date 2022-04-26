@@ -1,9 +1,12 @@
 import './App.css';
 import Counter from './components/Counter';
 import EventBind from './components/EventBind';
+import Form from './components/Form';
 import Greet from './components/Greet'
 import Greetings from './components/Greetings';
 import Message from './components/Message';
+import ParentComponent from './components/ParentComponent';
+import ParentComp from './components/ParentComp';
 
 function App() {
   return (
@@ -26,7 +29,13 @@ function App() {
 
        {/* <Counter /> */}
 
-       <EventBind />
+       {/* <EventBind /> */}
+
+       {/* <ParentComponent/> */}
+       
+       {/* <Form /> */}
+
+       <ParentComp/>
 
       </header>
     </div>

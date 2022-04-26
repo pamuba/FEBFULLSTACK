@@ -1,5 +1,8 @@
 JSX JavaScript XML=>Extension to the JS language syntex
 Fragments
-Props
+Props, method as props
 state(class, function(hook-useState))
 setState
+Event binding
+Controlled Components
+Pure Components
