@@ -18,6 +18,7 @@
   "homepage": "https://github.com/pamuba/FEBFULLSTACK#readme",
   "description": "",
   "dependencies": {
+    "@angular/cli": "^9.1.15",
     "mongoose": "^5.9.24"
   },
   "devDependencies": {
