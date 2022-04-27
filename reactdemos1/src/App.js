@@ -7,6 +7,9 @@ import Greetings from './components/Greetings';
 import Message from './components/Message';
 import ParentComponent from './components/ParentComponent';
 import ParentComp from './components/ParentComp';
+import RefsDemo from './components/RefsDemo';
+import Hero from './components/Hero';
+import Errorboundary from './components/Errorboundary';
 
 function App() {
   return (
@@ -35,7 +38,25 @@ function App() {
        
        {/* <Form /> */}
 
-       <ParentComp/>
+       {/* <ParentComp/> */}
+
+       {/* <RefsDemo/> */}
+
+      <Errorboundary>
+       <Hero heroName="Superman"/>
+      </Errorboundary>
+      
+      <Errorboundary> 
+       <Hero heroName="Batman"/>
+      </Errorboundary> 
+      
+      <Errorboundary>
+       <Hero heroName="Ironman"/>
+      </Errorboundary>
+      
+      <Errorboundary> 
+       <Hero heroName="Joker"/>
+      </Errorboundary> 
 
       </header>
     </div>

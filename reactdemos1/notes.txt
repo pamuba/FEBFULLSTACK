@@ -29,3 +29,34 @@ b : {name:"abc"}
 aSCb = false
 
 aSCa  / bSCb = true
+
+Refs
+
+
+Component Life Cycle Phases:
+1. Mounting : When an instance of a component is being created and inserted into the DOM
+
+2. Updating : When an instance of a component is being re rendered as a result in the change of props or state
+
+3. Unmounting : When an instance of a component is being removed from the DOM
+
+4. Error Handling : When u have an error 
+
+Mounting: ctr, render, componentDidMount, static getDerivedStateFromProps 
+*STATIC getDerivedStateFromProps : When the state of the component depends on changes in 
+props over time + set the state + we do not cause side effects (NO http CALLS)
+
+Updating:  
+static getDerivedStateFromProps, 
+shouldComponetUpdate(nextProps, nextState)
+render : Reads props and state and return JSX, 
+getSnapshotBeforeUpdate(prevProps, prevState) : called right before the changes from the virtual 
+DOM are reflected in the DOM + capture some information from the DOM 
+
+Unmounting: componentWillUnmount
+
+Error Handling: static getDerivedStateFromError , componentDidCatch
+//////////////////////////////////////////////////////////////////////
+Error Boundary: Component used as a fallback UI after an error
+
+static getDerivedStateFromError and/or componentDidCatch
