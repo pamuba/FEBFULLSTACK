@@ -10,6 +10,8 @@ import ParentComp from './components/ParentComp';
 import RefsDemo from './components/RefsDemo';
 import Hero from './components/Hero';
 import Errorboundary from './components/Errorboundary';
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
 
 function App() {
   return (
@@ -42,7 +44,7 @@ function App() {
 
        {/* <RefsDemo/> */}
 
-      <Errorboundary>
+      {/* <Errorboundary>
        <Hero heroName="Superman"/>
       </Errorboundary>
       
@@ -56,8 +58,10 @@ function App() {
       
       <Errorboundary> 
        <Hero heroName="Joker"/>
-      </Errorboundary> 
+      </Errorboundary>  */}
 
+      <ClickCounter/>
+      <HoverCounter/>
       </header>
     </div>
   );

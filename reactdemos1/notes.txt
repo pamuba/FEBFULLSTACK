@@ -60,3 +60,8 @@ Error Handling: static getDerivedStateFromError , componentDidCatch
 Error Boundary: Component used as a fallback UI after an error
 
 static getDerivedStateFromError and/or componentDidCatch
+
+/////////////////////////////////////////////////////////////////
+
+HOC(Comp1 + httpCalls) => new Comp
+HOC(Comp2 + httpCalls) => new Comp
