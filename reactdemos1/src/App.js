@@ -12,6 +12,10 @@ import Hero from './components/Hero';
 import Errorboundary from './components/Errorboundary';
 import ClickCounter from './components/ClickCounter';
 import HoverCounter from './components/HoverCounter';
+import PostList from './components/PostList';
+import PostForm from './components/PostForm';
+import UseStateCounter from './components/useStateCounter'
+import UseStateCounterTwo from './components/useStateCounterTwo'
 
 function App() {
   return (
@@ -60,8 +64,13 @@ function App() {
        <Hero heroName="Joker"/>
       </Errorboundary>  */}
 
-      <ClickCounter/>
-      <HoverCounter/>
+      {/* <ClickCounter/>
+      <HoverCounter/> */}
+
+      {/* <PostList/> */}
+      {/* <PostForm /> */}
+      {/* <UseStateCounter/> */}
+      <UseStateCounterTwo />
       </header>
     </div>
   );
