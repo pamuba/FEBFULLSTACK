@@ -65,3 +65,28 @@ static getDerivedStateFromError and/or componentDidCatch
 
 HOC(Comp1 + httpCalls) => new Comp
 HOC(Comp2 + httpCalls) => new Comp
+
+
+useEffect: allows side effects + can replace 3 lifecycle hooks
+componentDidMount
+componentDidUpdate
+compopnentWillUnmount
+
+useEffect with cleanup
+
+
+Context API
+1. create
+2. Provide
+3. Consume
+
+
+useContext
+useCallback
+useRef
+Memo
+useMemo
+useReducer
+
+Redux
+

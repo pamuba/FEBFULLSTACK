@@ -16,6 +16,14 @@ import PostList from './components/PostList';
 import PostForm from './components/PostForm';
 import UseStateCounter from './components/useStateCounter'
 import UseStateCounterTwo from './components/useStateCounterTwo'
+import HooCounterThree from './components/HooCounterThree'
+import HooksCounterFour from './components/HooksCounterFour';
+import UseEffectOne from './components/useEffectOne';
+import UseEfffectTwo from './components/UseEfffectTwo';
+import MouseContainer from './components/MouseContainer';
+import UseEffectThree from './components/UseEffectThree';
+import ComponentC from './components/ComponentC';
+import { UserProvider } from './components/UserContext';
 
 function App() {
   return (
@@ -70,8 +78,24 @@ function App() {
       {/* <PostList/> */}
       {/* <PostForm /> */}
       {/* <UseStateCounter/> */}
-      <UseStateCounterTwo />
-      </header>
+      {/* <UseStateCounterTwo /> */}
+
+      {/* <HooCounterThree></HooCounterThree> */}
+
+      {/* <HooksCounterFour></HooksCounterFour> */}
+
+      {/* <UseEffectOne/> */}
+      {/* <UseEfffectTwo></UseEfffectTwo> */}
+
+      {/* <UseEffectThree/> */}
+
+      {/* <MouseContainer/> */}
+      {/* </header> */}
+
+       <UserProvider value="John">
+        <ComponentC/>
+       </UserProvider>
+       </header>
     </div>
   );
 }

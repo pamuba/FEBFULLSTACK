@@ -5,7 +5,9 @@ function useStateCounterTwo() {
   const[count,setCount] = useState(initialCount)
 
   const incrementFive = () => {
-
+    for(let i=0;i<5;i++){
+      setCount(prevState => prevState + 1)
+    }
   }
   return (
     <>
