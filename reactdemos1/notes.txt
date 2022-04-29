@@ -77,7 +77,7 @@ useEffect with cleanup
 
 Context API
 1. create
-2. Provide
+2. Provide  
 3. Consume
 
 
