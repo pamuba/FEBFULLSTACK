@@ -52,7 +52,7 @@ const reducer = (state=initialState, action) => {
                 users:[],
                 error:action.payload
             }
-        dafault: return state
+        default: return state
     }
 }
 
