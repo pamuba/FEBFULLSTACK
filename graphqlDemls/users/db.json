@@ -1,15 +1,9 @@
 {
   "users": [
     {
-      "id": "23",
-      "firstName": "Bill",
-      "age": 20,
-      "companyId": "1"
-    },
-    {
       "id": "47",
       "firstName": "Samantha",
-      "age": 21,
+      "age": 99,
       "companyId": "2"
     },
     {
@@ -19,9 +13,10 @@
       "companyId": "2"
     },
     {
-      "firstName": "Olive",
+      "firstName": "Will Smith",
       "age": 33,
-      "id": "lQaltoJ"
+      "id": "lQaltoJ",
+      "companyId": "1"
     }
   ],
   "companies": [
