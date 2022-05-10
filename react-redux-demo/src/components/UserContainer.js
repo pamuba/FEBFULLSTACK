@@ -25,7 +25,7 @@ function UserContainer({userData, fetchUsers}) {
 
 const mapStateToProps = state => {
     return {
-        uesrData: state.user
+        userData: state.user
     }
 }
 

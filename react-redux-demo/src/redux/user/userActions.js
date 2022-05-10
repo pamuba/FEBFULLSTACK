@@ -15,14 +15,14 @@ const fetchUsersSuccess = (users) => {
 const fetchUsersFailure = (error) => {
     return {
         type:FETCH_USERS_FAILURE,
-        payload:error
+        payload: error
     }
 }
 
 //async action creators
 export const fetchUsers = () => {
-    return function(dispatch){
-        dispatch(fetchUsersRequest())
+    return (dispatch)=>{
+        dispatch(fetchUsersRequest)
         axios.get('https://jsonplaceholder.typicode.com/users')
                 .then((res) => {
                     const users = res.data
