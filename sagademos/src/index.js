@@ -8,9 +8,12 @@ import {Provider} from 'react-redux'
 import {createStore, applyMiddleware} from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './sagas'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 axios.defaults.withCredentials = true;
-axios.defaults.baseURL = "https://rem-rest-api.herokuapp.com/api";
+// axios.defaults.baseURL = "https://rem-rest-api.herokuapp.com/api";
+// axios.defaults.baseURL = "https://jsonplaceholder.typicode.com";
+axios.defaults.baseURL = "http://localhost:3000";
 
 const sagaMiddleware = createSagaMiddleware()
 

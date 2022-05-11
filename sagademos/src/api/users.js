@@ -7,3 +7,9 @@ export const getUsers = () => {
         }
     })
 }
+export const createUser = ({username, name}) => {
+    return axios.post('/users', {
+        username,
+        name
+    })
+}
