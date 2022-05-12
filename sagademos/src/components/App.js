@@ -47,6 +47,6 @@ class App extends Component {
 export default connect(({users})=>({users}), {
   getUsersRequest,
   createUserRequest,
-  deleteUserRequest,
+  deleteUserRequest, 
   usersError
 })(App);
