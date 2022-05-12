@@ -13,3 +13,8 @@ export const createUser = ({username, name}) => {
         name
     })
 }
+
+export const deleteUser = ({userId}) => {
+    console.log(userId)
+    return axios.delete(`/users/${userId}`);
+};
