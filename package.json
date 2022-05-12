@@ -19,7 +19,8 @@
   "description": "",
   "dependencies": {
     "@angular/cli": "^9.1.15",
-    "mongoose": "^5.9.24"
+    "mongoose": "^5.9.24",
+    "nodemon": "^2.0.16"
   },
   "devDependencies": {
     "node-mocks-http": "^1.11.0",
