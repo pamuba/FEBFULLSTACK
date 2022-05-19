@@ -6,7 +6,7 @@ function CreateQuote() {
       e.preventDefault();
       console.log(quote)
   }
-  return (
+  return ( 
     <div className='container my-container'>
       <form onSubmit={handleSubmit}>
         <input
