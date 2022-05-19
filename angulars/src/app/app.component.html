@@ -1,6 +1,12 @@
 <div class="container">
-  <h1>App Component</h1>
+  <h1>App Component Routing and Navigation</h1>
   <!-- <app-pipes></app-pipes> -->
-  <app-employee-list></app-employee-list>
-  <app-employee-detail></app-employee-detail>
+  <!-- <app-employee-list></app-employee-list>
+  <app-employee-detail></app-employee-detail> -->
+
+  <nav>
+    <a routerLink="/departments" routerLinkActive="active">Departments</a>
+    <a routerLink="/employees" routerLinkActive="active">Employees</a>
+  </nav>
+  <router-outlet></router-outlet>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-employee-detail',
@@ -23,17 +24,14 @@ export class EmployeeDetailComponent implements OnInit {
   // Observables - RxJS
   // Observables needs subscribers
   // Observables with HTTP Calls returns all the data at once
-  // HTTP, Obsrvables
+  // HTTP, Service, Obsrvables
 
-  public employees = [
-    {"id":1,"name":"Josh", "age":"22"},
-    {"id":2,"name":"John", "age":"32"},
-    {"id":3,"name":"Jimmy", "age":"20"},
-    {"id":4,"name":"Jill", "age":"19"},
-  ]
-  constructor() { }
+  public employees:any = []
+  constructor(private _empService:EmployeeService) { }
 
   ngOnInit(): void {
+    this._empService.getEmployees()
+                    .subscribe(data => this.employees = data)
   }
 
 }
